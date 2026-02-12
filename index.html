@@ -667,6 +667,48 @@
             opacity: 0.8;
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 968px) {
             .nav-links {
@@ -759,10 +801,11 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#story">Our Story</a></li>
+                <li><a href="#booking">Book Now</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact" class="book-nav-btn">Book Now</a></li>
+                <li><a href="#booking" class="book-nav-btn">Book Appointment</a></li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
         </div>
@@ -773,7 +816,7 @@
         <h1>Luxury Lash Extensions in Nairobi</h1>
         <p class="tagline">Experience world-class lash artistry that enhances your natural beauty</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Book Your Service</a>
+            <a href="#booking" class="btn btn-primary">Book Your Service</a>
             <a href="#services" class="btn btn-secondary">View Services</a>
         </div>
     </section>
@@ -854,6 +897,62 @@
         </div>
     </section>
 
+    <!-- Booking Form Section (New Position) -->
+    <section id="booking" class="contact" style="background: #f9f9f9;">
+        <div class="section-header">
+            <p class="label">BOOK NOW</p>
+            <h2>Reserve Your Lash Appointment</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+            <div class="booking-form">
+                <h3>✨ Book Your Lash Transformation</h3>
+                <p style="margin-bottom: 2rem; color: #666; text-align: center;">Fill in your details and we'll confirm via WhatsApp</p>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="service">Select Service *</label>
+                        <select id="service" required>
+                            <option value="">Choose a service...</option>
+                            <option value="classic">Classic Lashes - From KES 2,500</option>
+                            <option value="cateye">Cat Eye Lashes - From KES 3,000</option>
+                            <option value="volume">Volume Lashes - From KES 4,000</option>
+                            <option value="button">Button Lashes - From KES 1,500</option>
+                            <option value="fill">Lash Fill - From KES 1,500</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required placeholder="+254 7XX XXX XXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" required>
+                            <option value="">Select time...</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Special Requests or Notes</label>
+                        <textarea id="notes" placeholder="Any special requests or questions?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">📱 Send Booking via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="section-header">
@@ -876,7 +975,7 @@
                         <li><strong>Removal:</strong> Safe, professional lash removal service</li>
                         <li><strong>Duration:</strong> 4-6 weeks with proper care</li>
                     </ul>
-                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                    <button class="service-btn" onclick="location.href='#booking'">Book This Service</button>
                 </div>
             </div>
 
@@ -895,7 +994,7 @@
                         <li><strong>Removal:</strong> Gentle, damage-free removal</li>
                         <li><strong>Customization:</strong> Tailored to your eye shape</li>
                     </ul>
-                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                    <button class="service-btn" onclick="location.href='#booking'">Book This Service</button>
                 </div>
             </div>
 
@@ -914,7 +1013,7 @@
                         <li><strong>Mega Volume:</strong> Maximum fullness and drama</li>
                         <li><strong>Premium Quality:</strong> Ultra-lightweight, comfortable wear</li>
                     </ul>
-                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                    <button class="service-btn" onclick="location.href='#booking'">Book This Service</button>
                 </div>
             </div>
 
@@ -933,7 +1032,7 @@
                         <li><strong>Consultations:</strong> Expert advice on best styles for you</li>
                         <li><strong>Aftercare:</strong> Complete care instructions included</li>
                     </ul>
-                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                    <button class="service-btn" onclick="location.href='#booking'">Book This Service</button>
                 </div>
             </div>
         </div>
@@ -999,8 +1098,8 @@
             <p class="label">VISIT US</p>
             <h2>Get In Touch</h2>
         </div>
-        <div class="contact-container">
-            <div class="contact-info">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="contact-info" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); display: grid; gap: 2rem;">
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
                     <div>
@@ -1033,52 +1132,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="booking-form">
-                <h3>Book Your Lash Service</h3>
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="service">Select Service *</label>
-                        <select id="service" required>
-                            <option value="">Choose a service...</option>
-                            <option value="classic">Classic Lashes - From KES 2,500</option>
-                            <option value="cateye">Cat Eye Lashes - From KES 3,000</option>
-                            <option value="volume">Volume Lashes - From KES 4,000</option>
-                            <option value="button">Button Lashes - From KES 1,500</option>
-                            <option value="fill">Lash Fill - From KES 1,500</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" required placeholder="Your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" required placeholder="+254 7XX XXX XXX">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Preferred Date *</label>
-                        <input type="date" id="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Preferred Time *</label>
-                        <select id="time" required>
-                            <option value="">Select time...</option>
-                            <option value="9:00 AM">9:00 AM</option>
-                            <option value="10:30 AM">10:30 AM</option>
-                            <option value="12:00 PM">12:00 PM</option>
-                            <option value="1:30 PM">1:30 PM</option>
-                            <option value="3:00 PM">3:00 PM</option>
-                            <option value="4:30 PM">4:30 PM</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="notes">Special Requests or Notes</label>
-                        <textarea id="notes" placeholder="Any special requests or questions?"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Booking via WhatsApp</button>
-                </form>
-            </div>
         </div>
     </section>
 
@@ -1099,6 +1152,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#story">Our Story</a></li>
+                    <li><a href="#booking">Book Now</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1129,6 +1183,11 @@
             <p>&copy; 2024 - 2026 It's Lash Oclock. All rights reserved. | Premium Lash Extensions in Nairobi & Karatina, Kenya</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="#booking" class="whatsapp-float whatsapp-pulse" title="Book Now via WhatsApp">
+        💬
+    </a>
 
     <script>
         // Smooth scrolling
