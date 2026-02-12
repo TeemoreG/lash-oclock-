@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Lash Oclock - Premium Lash Extensions in Nairobi & Karatina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff1493;
+            --secondary-color: #ff69b4;
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .logo-text .lash {
+            color: var(--primary-color);
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            font-style: italic;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .book-nav-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .book-nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,20,147,0.3);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, rgba(255,20,147,0.90), rgba(255,105,180,0.85)), 
+                        url('https://i.ibb.co/d0VjFyZ3/black-volume.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 10rem 2rem;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Our Story Section */
+        .story {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .story-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .story-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .label {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-top: 0.5rem;
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255,20,147,0.2);
+        }
+
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-price {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .service-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,20,147,0.3);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 350px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(255,20,147,0.95));
+            color: var(--white);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            min-width: 60px;
+        }
+
+        .contact-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .booking-form {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+
+        .booking-form h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255,20,147,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .booking-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Crown -->
+                    <path d="M30 25 L35 35 L40 28 L45 35 L50 20 L55 35 L60 28 L65 35 L70 25 L70 40 L30 40 Z" 
+                          fill="#ff1493" stroke="#ff69b4" stroke-width="1"/>
+                    <!-- Eye shape -->
+                    <ellipse cx="50" cy="60" rx="25" ry="15" fill="white" stroke="#333" stroke-width="2"/>
+                    <!-- Iris -->
+                    <circle cx="50" cy="60" r="8" fill="#333"/>
+                    <!-- Pupil -->
+                    <circle cx="50" cy="60" r="4" fill="black"/>
+                    <!-- Eyelashes -->
+                    <g stroke="#ff1493" stroke-width="2" fill="none">
+                        <path d="M30 55 Q28 45 26 50"/>
+                        <path d="M35 52 Q33 42 31 47"/>
+                        <path d="M40 50 Q38 40 36 45"/>
+                        <path d="M60 50 Q62 40 64 45"/>
+                        <path d="M65 52 Q67 42 69 47"/>
+                        <path d="M70 55 Q72 45 74 50"/>
+                    </g>
+                    <!-- Bottom lashes -->
+                    <g stroke="#ff1493" stroke-width="1.5" fill="none">
+                        <path d="M35 68 L33 72"/>
+                        <path d="M42 70 L40 74"/>
+                        <path d="M50 71 L50 75"/>
+                        <path d="M58 70 L60 74"/>
+                        <path d="M65 68 L67 72"/>
+                    </g>
+                </svg>
+                <div class="logo-text">
+                    <h1>It's <span class="lash">Lash</span> Oclock</h1>
+                    <p>...More than just Lashes</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="book-nav-btn">Book Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Luxury Lash Extensions in Nairobi</h1>
+        <p class="tagline">Experience world-class lash artistry that enhances your natural beauty</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Book Your Service</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>5+</h3>
+                <p>Years of Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h3>2000+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Premium Products</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Lash Styles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story">
+        <div class="story-container">
+            <div class="story-image">
+                <img src="https://i.ibb.co/YTdcbKbx/freepik-upload-63775.jpg" alt="Professional lash artist at work">
+            </div>
+            <div class="story-content">
+                <p class="label">OUR JOURNEY</p>
+                <h2>Redefining Lash Beauty in Kenya</h2>
+                <h3>Where Expertise Meets Elegance</h3>
+                <p>
+                    At It's Lash Oclock, we've built our reputation on exceptional service, cutting-edge techniques, 
+                    and a warm, welcoming atmosphere. Our passion is making every client feel extraordinary with 
+                    lashes that enhance their natural beauty.
+                </p>
+                <p>
+                    Whether you're preparing for a special occasion or simply treating yourself to a confidence boost, 
+                    our certified lash technicians are here to bring your vision to life. We use only premium products 
+                    and the latest application methods to ensure your lashes look flawless and feel comfortable.
+                </p>
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <div>
+                            <h4>Premium Quality</h4>
+                            <p>We use only the finest international lash products</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💝</div>
+                        <div>
+                            <h4>Personalized Care</h4>
+                            <p>Every service is tailored to your unique style</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎓</div>
+                        <div>
+                            <h4>Expert Technicians</h4>
+                            <p>Certified professionals with years of experience</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌟</div>
+                        <div>
+                            <h4>Client First</h4>
+                            <p>Your satisfaction is our ultimate goal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <p class="label">WHAT WE OFFER</p>
+            <h2>Premium Lash Services</h2>
+        </div>
+        <div class="services-container">
+            <!-- Classic Lashes -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://i.ibb.co/bjYRMrzt/314352-1.jpg" alt="Classic lash extensions">
+                </div>
+                <div class="service-content">
+                    <h3>💎 Classic Lashes</h3>
+                    <p class="service-price">From KES 2,500</p>
+                    <ul class="service-features">
+                        <li><strong>Full Set:</strong> One extension per natural lash</li>
+                        <li><strong>Cat Eye:</strong> Elongated outer corners for dramatic effect</li>
+                        <li><strong>Wispy:</strong> Natural, textured look with varied lengths</li>
+                        <li><strong>Removal:</strong> Safe, professional lash removal service</li>
+                        <li><strong>Duration:</strong> 4-6 weeks with proper care</li>
+                    </ul>
+                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                </div>
+            </div>
+
+            <!-- Cat Eye Lashes -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://i.ibb.co/0y25Q1n4/close-up-black-skin-female-eye-eyelash-extensions-wispy-lashes-close-up-eye-eyelash-extensions-beaut.webp" alt="Cat eye lash extensions">
+                </div>
+                <div class="service-content">
+                    <h3>✨ Cat Eye Lashes</h3>
+                    <p class="service-price">From KES 3,000</p>
+                    <ul class="service-features">
+                        <li><strong>Long Set:</strong> Dramatic length for special occasions</li>
+                        <li><strong>Short Set:</strong> Subtle, everyday elegance</li>
+                        <li><strong>Wispy Style:</strong> Feathery, natural-looking cat eye</li>
+                        <li><strong>Removal:</strong> Gentle, damage-free removal</li>
+                        <li><strong>Customization:</strong> Tailored to your eye shape</li>
+                    </ul>
+                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                </div>
+            </div>
+
+            <!-- Volume Lashes -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://i.ibb.co/R44v4DhS/african-woman-professional-make-up-smokey-eyes-closed-long-eyelashes-false-dark-shadows-eyelids-eyeb.webp" alt="Volume lash extensions">
+                </div>
+                <div class="service-content">
+                    <h3>🌟 Volume Lashes</h3>
+                    <p class="service-price">From KES 4,000</p>
+                    <ul class="service-features">
+                        <li><strong>Full Set:</strong> Multiple lashes per natural lash</li>
+                        <li><strong>Cat Eye:</strong> Dramatic volume with elongated corners</li>
+                        <li><strong>Wispy:</strong> Textured, fluffy volume effect</li>
+                        <li><strong>Mega Volume:</strong> Maximum fullness and drama</li>
+                        <li><strong>Premium Quality:</strong> Ultra-lightweight, comfortable wear</li>
+                    </ul>
+                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                </div>
+            </div>
+
+            <!-- Button Lashes & Other Services -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://i.ibb.co/xtbkHbz9/freepik-upload-34119-1.png" alt="Lash consultation and styling">
+                </div>
+                <div class="service-content">
+                    <h3>💫 Other Services</h3>
+                    <p class="service-price">From KES 1,500</p>
+                    <ul class="service-features">
+                        <li><strong>Button Lashes:</strong> Cluster lashes for quick glam</li>
+                        <li><strong>Lash Fills:</strong> Maintain your current set (2-3 weeks)</li>
+                        <li><strong>Custom Designs:</strong> Unique, personalized looks</li>
+                        <li><strong>Consultations:</strong> Expert advice on best styles for you</li>
+                        <li><strong>Aftercare:</strong> Complete care instructions included</li>
+                    </ul>
+                    <button class="service-btn" onclick="location.href='#contact'">Book This Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="gallery-container">
+            <div class="section-header">
+                <p class="label">OUR WORK</p>
+                <h2>Beauty in Action</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/d0VjFyZ3/black-volume.jpg" alt="Volume lashes">
+                    <div class="gallery-overlay">
+                        <h4>Volume Lashes</h4>
+                        <p>Dramatic, full lashes that make a statement</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/N6KP4jFk/807.jpg" alt="Classic lashes">
+                    <div class="gallery-overlay">
+                        <h4>Classic Lashes</h4>
+                        <p>Natural beauty enhanced with elegance</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/wFFQ2qV9/307881.jpg" alt="Cat eye style">
+                    <div class="gallery-overlay">
+                        <h4>Cat Eye Style</h4>
+                        <p>Sleek and sophisticated perfection</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/5WjKWJNj/92557.jpg" alt="Professional application">
+                    <div class="gallery-overlay">
+                        <h4>Expert Application</h4>
+                        <p>Precision and care in every lash</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/W4w4R2CF/81v3-N9-Hyqh-L-AC-UF350-350-QL80.jpg" alt="Lash process">
+                    <div class="gallery-overlay">
+                        <h4>The Process</h4>
+                        <p>Professional service from start to finish</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/YBX4Y3RV/istockphoto-1155357687-612x612.jpg" alt="Beautiful results">
+                    <div class="gallery-overlay">
+                        <h4>Stunning Results</h4>
+                        <p>Wake up gorgeous every day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <p class="label">VISIT US</p>
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Our Location</h3>
+                        <p>Nairobi • Karatina<br>Kenya</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>Phone / WhatsApp</h3>
+                        <p><a href="tel:+254114089383">+254 114 089 383</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📸</div>
+                    <div>
+                        <h3>Instagram</h3>
+                        <p><a href="https://instagram.com/Mish_shanny" target="_blank">@Mish_shanny</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <p>
+                            Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                            Sunday: 10:00 AM - 5:00 PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-form">
+                <h3>Book Your Lash Service</h3>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="service">Select Service *</label>
+                        <select id="service" required>
+                            <option value="">Choose a service...</option>
+                            <option value="classic">Classic Lashes - From KES 2,500</option>
+                            <option value="cateye">Cat Eye Lashes - From KES 3,000</option>
+                            <option value="volume">Volume Lashes - From KES 4,000</option>
+                            <option value="button">Button Lashes - From KES 1,500</option>
+                            <option value="fill">Lash Fill - From KES 1,500</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required placeholder="+254 7XX XXX XXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" required>
+                            <option value="">Select time...</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Special Requests or Notes</label>
+                        <textarea id="notes" placeholder="Any special requests or questions?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Booking via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>It's Lash Oclock</h3>
+                <p>Nairobi's trusted destination for luxury lash extensions. We combine global expertise with personalized care to help you look and feel your absolute best.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/Mish_shanny" target="_blank" title="Instagram">📷</a>
+                    <a href="https://wa.me/254114089383" target="_blank" title="WhatsApp">💬</a>
+                    <a href="tel:+254114089383" title="Call Us">📱</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular Services</h3>
+                <ul>
+                    <li><a href="#services">Classic Lashes</a></li>
+                    <li><a href="#services">Cat Eye Lashes</a></li>
+                    <li><a href="#services">Volume Lashes</a></li>
+                    <li><a href="#services">Button Lashes</a></li>
+                    <li><a href="#services">Lash Fills</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>📍 Nairobi • Karatina</li>
+                    <li>📱 <a href="tel:+254114089383">+254 114 089 383</a></li>
+                    <li>📸 <a href="https://instagram.com/Mish_shanny" target="_blank">@Mish_shanny</a></li>
+                    <li>🕒 Mon-Sat: 9AM-7PM</li>
+                    <li>🕒 Sun: 10AM-5PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 - 2026 It's Lash Oclock. All rights reserved. | Premium Lash Extensions in Nairobi & Karatina, Kenya</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Booking form WhatsApp integration
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const service = document.getElementById('service').selectedOptions[0].text;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const notes = document.getElementById('notes').value;
+            
+            const message = `Hi! I'd like to book an appointment:
+            
+*Service:* ${service}
+*Name:* ${name}
+*Phone:* ${phone}
+*Preferred Date:* ${date}
+*Preferred Time:* ${time}
+${notes ? `*Notes:* ${notes}` : ''}
+
+Looking forward to my lash transformation!`;
+            
+            const whatsappURL = `https://wa.me/254114089383?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Fade in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .gallery-item, .stat-item, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
